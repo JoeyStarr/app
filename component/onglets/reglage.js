@@ -3,7 +3,8 @@ import {View, Text, Pressable, Image, ScrollView, Switch} from 'react-native'
 import styles from '../../sty';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState,useEffect } from "react";
-import { Video, AVPlaybackStatus } from 'expo-av';
+import Video from '@remobile/react-native-video';
+import ReactPlayer from 'react-player'
 
 import axios from 'axios';
 import { db } from '../../firebase/config';
@@ -70,6 +71,15 @@ const Regl = ( {navigation} ) => {
             console.log("non")
         })
     })
+    /*
+    const [rate,setRate] = useState(1)
+    const [volume,setVolume] = useState(1)
+    const [resizeMode,setResize] = useState('stretch')
+    const [paused,setPaused] = useState('false')
+    const [muted,setMuted] = useState(false)
+    const [duration,setDuration] = useState(0.0)
+    const [currentTime,setCurrentTime] = useState(0.0)
+    */
 
     return(
         <View style={styles.conteneur3}>
@@ -82,17 +92,7 @@ const Regl = ( {navigation} ) => {
             <ScrollView>
                 <View style={styles.reg}>
                     <View style={styles.deo}>
-                    <Video
-                        ref={video}
-                        style={styles.vid}
-                        source={{uri:'https://www.youtube.com/watch?v=dHiqU_YxiJE&list=TLPQMjExMDIwMjJeMP_T59LsUg&index=3'}}
-                        useNativeControls={false}
-                        shouldPlay={true}
-                        resizeMode="cover"
-                        isMuted={true}
-                        isLooping={true}
-                        onPlaybackStatusUpdate={status => setStatus(() => status)}
-                    />
+                        
                     </View>
                     <Text style={styles.ecrito}>
                         Controller votre serre

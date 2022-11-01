@@ -53,7 +53,6 @@ const Homie = ({route, navigation}) => {
         axios.get(`http://192.168.252.15:8000/dpers/${fireId}`)
         .then((response) => {
             setSerre(response.data.serrepers[0].sysSerre)
-            console.log(serre)
         })
         .catch((err) => {
             console.log("e1 :",err)
@@ -63,7 +62,19 @@ const Homie = ({route, navigation}) => {
     
 
     const setValue = (index) => {
-        axios.post(`http://192.168.252.15:8000/updserre/${hash}`,{
+        console.log(index)
+        if(index == 4){
+           axios.post(`http://192.168.252.15:8000/updserre/${hash}`,{
+            "kultSerre": null,
+        })
+        .then((response) => {
+            console.log("OKEY Null")
+        })
+        .catch((err) => {
+            console.log("e2 :",err)
+        }) 
+        }else{
+            axios.post(`http://192.168.252.15:8000/updserre/${hash}`,{
             "kultSerre": index
         })
         .then((response) => {
@@ -72,10 +83,12 @@ const Homie = ({route, navigation}) => {
         .catch((err) => {
             console.log("e2 :",err)
         })
+        }
+        
     }
 
-    const countries = ["Soja", "Choux", "Tomate", "Blé"]
-    const listCol = ["#62B8F6", "#62B8F6", "#62B8F6", "#62B8F6"]
+    const countries = ["Soja", "Choux", "Tomate", "Blé","Aucune culture"]
+    const listCol = ["#62B8F6", "#62B8F6", "#62B8F6", "#62B8F6","#62B8F6"]
     const [color,setColor] = useState("#62B8F6")
     return(
     <ScrollView style={styles.conteneurparent} showsVerticalScrollIndicator={false}>

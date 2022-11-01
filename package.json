@@ -15,6 +15,7 @@
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
+    "@remobile/react-native-video": "^1.0.2",
     "@types/axios": "^0.14.0",
     "@types/firebase": "^3.2.1",
     "@types/react-native-app-intro-slider": "^4.0.0",
@@ -29,6 +30,7 @@
     "firebase": "^9.6.11",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hls-player": "^3.0.7",
     "react-native": "0.68.2",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-network-info": "^5.2.1",
@@ -38,7 +40,8 @@
     "react-native-vector-icons": "^9.2.0",
     "react-native-video": "^2.3.1",
     "react-native-video-player": "^0.12.0",
-    "react-native-web": "0.17.7"
+    "react-native-web": "0.17.7",
+    "react-player": "^2.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
